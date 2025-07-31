@@ -8,7 +8,7 @@ export interface Chapter {
   id: number;
   title: string;
   image: string;
-  images: string;
+  images: string[];
   objective: string;
   description: string;
   technologies: string[];
