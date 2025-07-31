@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { X, Github, ExternalLink } from 'lucide-react';
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   title: string;
-  images: string;
+  images: string[]; // CAMBIO: ahora es un array
   objective: string;
   description: string;
   technologies: string[];
@@ -17,13 +17,15 @@ export const Modal: React.FC<ModalProps> = ({
   isOpen,
   onClose,
   title,
-  objective,
   images,
+  objective,
   description,
   technologies,
   github,
   demo
 }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   if (!isOpen) return null;
 
   const techColors: Record<string, string> = {
@@ -40,11 +42,19 @@ export const Modal: React.FC<ModalProps> = ({
     "Docker": "bg-blue-400/20 text-blue-300 border-blue-400/30"
   };
 
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
   return (
     <>
       <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50" onClick={onClose} />
       <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
-        <div className="bg-gray-900/95 border border-gray-700 rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto backdrop-blur-xl">
+        <div className="bg-gray-900/95 border border-gray-700 rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto backdrop-blur-xl relative">
           <div className="flex justify-between items-start mb-6">
             <h2 className="text-2xl font-bold text-white">{title}</h2>
             <button
@@ -54,6 +64,33 @@ export const Modal: React.FC<ModalProps> = ({
               <X size={24} />
             </button>
           </div>
+
+          {/* Carrusel de imágenes */}
+          {images.length > 0 && (
+            <div className="mb-6 relative">
+              <img
+                src={images[currentImageIndex]}
+                alt={`Imagen ${currentImageIndex + 1}`}
+                className="w-full rounded-lg object-cover max-h-[300px]"
+              />
+              {images.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-0 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-black/50 hover:bg-black/70 text-white rounded-l"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-0 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-black/50 hover:bg-black/70 text-white rounded-r"
+                  >
+                    ›
+                  </button>
+                </>
+              )}
+            </div>
+          )}
 
           <div className="space-y-6">
             <div>

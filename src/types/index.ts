@@ -23,6 +23,7 @@ export interface Project {
   github: string;
   demo?: string;
   image: string;
+  images: string[];
   chapters: Chapter[];
 }
 
@@ -32,6 +33,7 @@ export interface OtherProject {
   objective: string;
   description: string;
   technologies: string[];
+  images: string[];
   github: string;
   demo?: string;
   image: string;

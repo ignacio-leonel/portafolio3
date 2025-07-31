@@ -31,23 +31,33 @@ export const OtrosProyectos: React.FC = () => {
     <section id="otros-proyectos" className="py-20 bg-gray-800/50">
       <div className="container mx-auto px-4">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-white">
-  Otros Proyectos
-</h2>
+          
+          {/* Título animado con degradé */}
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold text-center mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient"
+          >
+            Otros Proyectos
+          </motion.h2>
 
-<motion.p
-  className="text-gray-400 text-center max-w-2xl mx-auto mb-16 text-lg leading-relaxed"
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ duration: 1, delay: 0.3 }}
-  viewport={{ once: true }}
->
-  Estos proyectos no están directamente alineados con mi enfoque actual como Backend Engineer,
-  representan una parte esencial de mi recorrido: fueron el punto de partida para aplicar lo aprendido,
-  resolver desafíos reales y afianzar conocimientos técnicos que hoy forman parte de mi día a día.
-</motion.p>
+          {/* Párrafo estilizado */}
+          <motion.p
+            className="italic text-gray-100 text-center max-w-3xl mx-auto mb-16 text-lg leading-relaxed"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            Estos <strong>proyectos</strong> no están directamente alineados con mi enfoque actual como <strong>backend engineer</strong>,
+            pero representan <strong>puntos de partida</strong> esenciales: fueron el espacio donde apliqué lo aprendido,
+            resolví <strong>desafíos reales</strong> y consolidé <strong>conocimientos técnicos</strong> que hoy forman parte de mi <strong>día a día</strong>.
+          </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          {/* Tarjetas 50% */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
             {otherProjects.map((project, index) => (
               <div
                 key={project.id}
@@ -121,12 +131,22 @@ export const OtrosProyectos: React.FC = () => {
         />
       )}
 
+      {/* Line clamp CSS */}
       <style>{`
         .line-clamp-2 {
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
           overflow: hidden;
+        }
+        @keyframes gradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 6s ease infinite;
         }
       `}</style>
     </section>
