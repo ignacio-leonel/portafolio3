@@ -18,7 +18,7 @@ export const mainProjects: Project[] = [
       {
        "id": 1,
   "title": "Modularización es Escalabilidad",
-  "image": "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg",
+  "image": "/images/stock/gestionstock.png",
   "images": ["/images/stock/capitulo1/carpetas.jpeg"],
   "objective": "Diseñar una arquitectura de backend modular, escalable y preparada para la integración con base de datos.",
   "description": "Inicio del desarrollo backend del sistema de gestión comercial, utilizando Node.js, Express y PostgreSQL. Se configuró el servidor y se definió una estructura clara y escalable basada en capas (controllers, services, routes y models), permitiendo una fácil mantenibilidad y crecimiento del proyecto. El servidor quedó operativo en el puerto 4000 y listo para establecer conexión con la base de datos.",
@@ -27,7 +27,7 @@ export const mainProjects: Project[] = [
       {
           "id": 2,
   "title": "Gestión de Productos",
-  "image": "https://images.pexels.com/photos/1670187/pexels-photo-1670187.jpeg",
+  "image": "/images/stock/gestionstock.png",
   "images": [
     "/images/stock/capitulo2/cap2.jpeg",
     "/images/stock/capitulo2/cap2.1.jpeg",
@@ -41,7 +41,7 @@ export const mainProjects: Project[] = [
       {
         "id": 3,
   "title": "Validaciones y Conexión Sólida",
-  "image": "https://images.pexels.com/photos/1005638/pexels-photo-1005638.jpeg",
+  "image": "/images/stock/gestionstock.png",
   "images": [
     "/images/stock/capitulo3/delete.png",
     "/images/stock/capitulo3/get.png",
@@ -54,7 +54,7 @@ export const mainProjects: Project[] = [
        {
        "id": 4,
   "title": "Autenticación y Control de Stock en Ventas",
-  "image": "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg",
+  "image": "/images/stock/gestionstock.png",
   "images": [
     "/images/stock/capitulo4/middleware.png",
     "/images/stock/capitulo4/controlador-venta.png",
@@ -72,33 +72,41 @@ export const mainProjects: Project[] = [
    {
     id: 1,
     title: "Sistema de Gestión Académica",
-    objective: "Organizar alumnos, carreras y materias",
+    objective: "Organizar alumnos, carreras y materias para instituciones académicas. Sistema en desarrollo.",
     description: "Este es un sistema en desarrollo para gestionar alumnos, carreras y materias en una institución académica. Está construido con Python, utilizando principios de programación estructurada y orientada a objetos, y cuenta con persistencia de datos mediante SQLite.",
     technologies: ["Python", "SQLite", "OOP"],
-    github: "Este es un sistema en desarrollo para gestionar alumnos, carreras y materias en una institución académica. Está construido con Python, utilizando principios de programación estructurada y orientada a objetos, y cuenta con persistencia de datos mediante SQLite.",
+    github: "https://github.com/ignacio-leonel/sistema_gestion_academica",
     image: "/images/alumnos/gestionalumnos.png",
     images: [ "/images/alumnos/gestionacademica1.png", "/images/alumnos/gestionacademica2.png", "/images/alumnos/gestionacademica4.png"],
     chapters: [
       {
         id: 1,
         title: "Modularización es Escalabilidad",
-        image: "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg",
+        image: "/images/alumnos/gestionalumnos.png",
         images: ["/images/stock/capitulo1/carpetas.jpeg"]
 ,
         objective: "Preparar la estructura de carpetas y módulos. Conectar las rutas",
         description: "Preparacion de la estructura de carpetas y módulos. Conexión de rutas y middleware para una API escalable.",
-        technologies: ["Node.js", "Postman", "Express.js"]
+        technologies: ["Phyton", "SQLite", "OOP"]
       },
       {
         id: 2,
-        title: "Gestión de Productos",
-        image: "https://images.pexels.com/photos/1670187/pexels-photo-1670187.jpeg",
-        images: ["/images/stock/capitulo2/ca2.jpeg", "/images/stock/capitulo2/ca2.1.jpeg", "/images/stock/capitulo2/ca2.2.jpeg","/images/stock/capitulo2/ca2.3.jpeg","/images/stock/capitulo2/ca2.4.jpeg"],
-        objective: "CRUD completo de productos",
+        title: "Division de responsabilidades",
+        image: "/images/alumnos/gestionalumnos.png",
+        images: ["images/alumnos/capitulo2/menu.png", "images/alumnos/capitulo2/consultaalumno.png", "images/alumnos/capitulo2/menuadmin.png"],
+        objective: "Implementar el menú principal y las opciones de consulta, cada objeto con su propia responsabilidad.",
         description: "Sistema de gestión de productos con categorías, imágenes, precios y filtros avanzados.",
-        technologies: ["Node.js", "Express.js"]
+        technologies: ["Phyton", "SQLite", "OOP"]
       },
-      
+      {
+        id: 3,
+        title: "Base de Datos: Sqlite",
+        image: "/images/alumnos/gestionalumnos.png",
+        images: ["images/alumnos/capitulo3/sqlite.png"],
+        objective: "Se conecta a la base de datos SQLite",
+        description: "Una vez conectados los modulos, se conecta a la base de datos SQLite y se crean las tablas necesarias para el sistema.",
+        technologies:   ["Phyton", "SQLite", "OOP"]
+      },
        
       
     ]
