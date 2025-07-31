@@ -42,7 +42,7 @@ export const OtrosProyectos: React.FC = () => {
   transition={{ duration: 1, delay: 0.3 }}
   viewport={{ once: true }}
 >
-  Aunque estos proyectos no están directamente alineados con mi enfoque actual como Backend Engineer,
+  Estos proyectos no están directamente alineados con mi enfoque actual como Backend Engineer,
   representan una parte esencial de mi recorrido: fueron el punto de partida para aplicar lo aprendido,
   resolver desafíos reales y afianzar conocimientos técnicos que hoy forman parte de mi día a día.
 </motion.p>
