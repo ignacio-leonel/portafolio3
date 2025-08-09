@@ -137,7 +137,7 @@ export const Contacto: React.FC = () => {
                   {/* CTA Button */}
                   <div className="text-center">
                     <a
-                  href="/cv-ignacio-maldonado.pdf"
+                  href="/ignacioMaldonado-backendengineer.pdf"
                   download
                   className="flex items-center gap-2 bg-cyan-500/80 hover:bg-gray-700 text-white px-6 py-4 rounded-full transition-all duration-300 backdrop-blur-sm border border-gray-600 hover:border-cyan-500"
                 >
